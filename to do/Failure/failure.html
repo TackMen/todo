@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="todo.js"></script>
+</head>
+<body>
+    <div id="global-container">
+        <div class="container">
+            <header class="header">
+                <h1 class="header__title">TO DO APP</h1>
+            </header>
+            <div id="content">
+                <div class="task-container">
+                    <div id="stage">
+                        <ul class="task__item">
+                            <li class="taskItem">
+                                <ul class="task__list">
+                                    <p class="taskContent"></p>
+                                </ul>
+                                <div class="taskStatus">
+                                    <div class="row">
+                                        <div>
+                                            <dl class="taskStatus__priority">
+                                                <dt class="taskStatus__priority__text"></dt>
+                                                <dd class="taskStatus__priority__height"></dd>
+                                            </dl>
+                                            <dl class="taskStatus__limit">
+                                                <dt class="taskStatus__limit__text"></dt>
+                                                <dd class="taskStatus__limit__date">
+                                                    <span class="aleart"></span>
+                                                </dd>
+                                            </dl>
+                                        </div>
+                                        <div>
+                                            <ul class="taskStatus__edit">
+                                                <li class="taskStatus__edit__li">
+                                                    <label for="">
+                                                        <input type="checkbox">
+                                                        <span></span>
+                                                        <span>完了</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <button class="btn-edit">編集</button>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="aleart">タスクを入力してください</div>
+                    </div>
+                    <div class="task-form">
+                        <div class="task-form__inner">
+                            <form name="taskForm" id="js-taskForm">
+                            <div class="task-form__content-up">
+                                <div class="task-form__content__text">
+                                    TO DO
+                                    <span class="task-form__content__required">※Required</span>
+                                </div>
+                                <div class="task-form__content__input">
+                                    <input type="text" name="content" class="task-form__content__value" required placeholder="タスクを入力してください">
+                                </div>
+                            </div>
+                            <div class="task-form__content-row">
+                                <div class="priority">
+                                    <div class="priority__text">
+                                        Priority
+                                        <span class="priority__required">※Required</span>
+                                    </div>
+                                    <label for="" class="priority__select">
+                                        <input class="custom-control-input" type="radio" name="priority" value="3" required>
+                                        <span class="custom-control-indicator"></span>
+                                        <span class="custom-control-description">高</span>
+                                    </label>
+                                    <label for="" class="priority__select">
+                                        <input class="custom-control-input" type="radio" name="priority" value="2" required>
+                                        <span class="custom-control-indicator"></span>
+                                        <span class="custom-control-description">中</span>
+                                    </label>
+                                    <label for="" class="priority__select">
+                                        <input class="custom-control-input" type="radio" name="priority" value="3" required>
+                                        <span class="custom-control-indicator"></span>
+                                        <span class="custom-control-description">低</span>
+                                    </label>
+                                </div>
+                                <div class="deadline">
+                                    <div class="deadline__text">Deadline</div>
+                                    <input type="date" name="limit" class="deadline__date">
+                                </div>
+                                <div class="add-cansel">
+                                    <input type="submit" value="ADD" class="add-cansel__addbtn">
+                                    <input type="reset" value="CANCEL" class="add-cansel__canselbtn">
+                                </div>
+                            </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="result">
+                        <table class="result__table">
+                            <tbody>
+                                <tr>
+                                    <th>NOW TOTAL</th>
+                                    <td>
+                                        <span class="result__totalcount">0</span>
+                                        "個"
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>REMAIN</th>
+                                    <td>
+                                        <span class="result__totalcount">0</span>
+                                        "個"
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>COMPLETE</th>
+                                    <td>
+                                        <span class="result__totalcount">0</span>
+                                        "個"
+                                        <div class="taskDeleteBtn" id="js-taskDeleteBtn">
+                                            <a href="" class="small">delete</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>COMPLETE RATE</th>
+                                    <td>
+                                        <span class="result__completionRate">0</span>
+                                        "%"
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="sortArea">
+                        <h2 class="sortArea__title">SORT BY</h2>
+                        <div class="sortArea__btn">
+                            <button class="btn__priority js-sort-priority">PRIORITY</button>
+                            <button class="btn__limit js-sort-limit">LIMIT</button>
+                        </div>
+                    </div>
+                    <div class="btn__deleteAllItem" id="js-deleteAllItem">DELETE ALL</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
